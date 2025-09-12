@@ -43,102 +43,52 @@ navLinks.querySelectorAll("a").forEach((link) => {
 // Servicios
 
 
-const tabs = document.querySelectorAll(".tab-btn");
-const contents = document.querySelectorAll(".tab-content");
+const track = document.querySelector(".carousel-track");
+const prevBtn = document.querySelector(".prev-btn");
+const nextBtn = document.querySelector(".next-btn");
+const cards = document.querySelectorAll(".card-servicio");
 
-tabs.forEach(tab => {
-  tab.addEventListener("click", () => {
-    tabs.forEach(btn => btn.classList.remove("active"));
-    contents.forEach(content => content.classList.remove("active"));
-    tab.classList.add("active");
-    document.getElementById(tab.dataset.tab).classList.add("active");
-  });
-});
+let index = 0;
+const totalCards = cards.length;
+const visibleCards = 3;
+const maxIndex = totalCards - visibleCards; // 2 con 5 cards
 
-// Inicializar primera pestaña
-window.addEventListener("DOMContentLoaded", () => {
-  tabs[0].classList.add("active");
-  contents[0].classList.add("active");
-});
+function updateCarousel() {
+  // calcular ancho exacto de un paso
+  const step = track.scrollWidth / totalCards;
 
-//valores
-document.addEventListener("DOMContentLoaded", () => {
-  const track = document.querySelector(".valores-cards");
-  const cards = Array.from(track.querySelectorAll(".valor-card"));
-  const prevBtn = document.querySelector(".carousel-btn.prev");
-  const nextBtn = document.querySelector(".carousel-btn.next");
+  // clamp: nunca salir de los límites
+  index = Math.max(0, Math.min(index, maxIndex));
 
-  let index = 0; // siempre inicia en el primer card
+  // mover
+  const offset = index * step;
+  track.style.transform = `translateX(-${offset}px)`;
 
-  const isMobile = () => window.innerWidth <= 650;
+  // activar/desactivar botones
+  prevBtn.disabled = index === 0;
+  nextBtn.disabled = index === maxIndex;
+}
 
-  function scrollToIndex(i, smooth = true) {
-    if (!cards[i]) return;
-    const card = cards[i];
-    // centramos el card en pantalla
-    const target = card.offsetLeft - (track.clientWidth - card.offsetWidth) / 2;
-    track.scrollTo({ left: target, behavior: smooth ? "smooth" : "auto" });
-    index = i;
-    updateButtons();
+// eventos
+nextBtn.addEventListener("click", () => {
+  if (index < maxIndex) {
+    index++;
+    updateCarousel();
   }
-
-  function updateButtons() {
-    if (!isMobile()) {
-      prevBtn.style.display = "none";
-      nextBtn.style.display = "none";
-      return;
-    }
-    prevBtn.style.display = "block";
-    nextBtn.style.display = "block";
-    prevBtn.disabled = index <= 0;
-    nextBtn.disabled = index >= cards.length - 1;
-    prevBtn.style.opacity = prevBtn.disabled ? 0.4 : 1;
-    nextBtn.style.opacity = nextBtn.disabled ? 0.4 : 1;
-  }
-
-  // Flechas
-  nextBtn.addEventListener("click", () => {
-    if (index < cards.length - 1) scrollToIndex(index + 1);
-  });
-  prevBtn.addEventListener("click", () => {
-    if (index > 0) scrollToIndex(index - 1);
-  });
-
-  // Swipe/manual scroll → actualiza index
-  track.addEventListener("scroll", () => {
-    if (!isMobile()) return;
-    const trackCenter = track.scrollLeft + track.clientWidth / 2;
-    let nearest = 0, minDist = Infinity;
-    cards.forEach((card, i) => {
-      const cardCenter = card.offsetLeft + card.offsetWidth / 2;
-      const dist = Math.abs(cardCenter - trackCenter);
-      if (dist < minDist) {
-        minDist = dist;
-        nearest = i;
-      }
-    });
-    index = nearest;
-    updateButtons();
-  });
-
-  // Resize
-  window.addEventListener("resize", () => {
-    if (isMobile()) {
-      scrollToIndex(index, false);
-    } else {
-      track.scrollTo({ left: 0, behavior: "auto" });
-      index = 0;
-    }
-    updateButtons();
-  });
-
-  // Inicializar
-  setTimeout(() => {
-    scrollToIndex(0, false); // siempre arranca en la PRIMER card
-    updateButtons();
-  }, 100);
 });
 
+prevBtn.addEventListener("click", () => {
+  if (index > 0) {
+    index--;
+    updateCarousel();
+  }
+});
+
+// ajuste en resize
+window.addEventListener("resize", updateCarousel);
+
+// inicializar
+updateCarousel();
 
 
 
