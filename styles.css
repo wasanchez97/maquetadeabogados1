@@ -164,7 +164,7 @@ nav {
 header {
   position: fixed;
   width: 100%;
-  background: #E4E4E4; /* gris claro como la imagen */
+  background: #EFEDE7; /* gris claro como la imagen */
   z-index: 1000;
 }
 
@@ -341,7 +341,7 @@ nav {
 /* Hero */
 .hero {
   height: 765px;
-  background:url('./img/floriane-vita-FyD3OWBuXnY-unsplash.jpg') center/cover no-repeat;
+  /* background:url('./img/floriane-vita-FyD3OWBuXnY-unsplash.jpg') center/cover no-repeat; */
   position: relative;
   padding: 168px 144px;
   display: flex;
@@ -350,12 +350,21 @@ nav {
   text-align: left;
   overflow: hidden;
 }
+.hero-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* cubre todo el contenedor */
+  z-index: -1; /* queda detrás de todo */
+}
 
 .hero::before {
   content: "";
   position: absolute;
   inset: 0;
-  background-color: #1f3559cb;
+  background-color: #70552E;
   mix-blend-mode: hard-light;
 }
 .hero-content {
@@ -389,7 +398,7 @@ nav {
   display: flex;
   align-items: center;
   padding: 20px 32px;
-  background: #DEA95A; 
+  background: #F4F1E5; 
   color: #24406C;
   border-radius: 12px;
   font-family: Roboto;
@@ -408,8 +417,8 @@ nav {
 
 
 .btn-cta:hover {
-  background: #423E7D;
-  color: #DEA95A;
+  background: #DEA95A;
+  color: #24406C;
   transform: scale(1.05);
 }
 
@@ -483,10 +492,13 @@ nav {
 
   .btn-cta {
     display: flex;
-    width: 343px;
+    width: 312px;
+    margin: 0 auto;
     height: 72px;
-    font-size: 16;
-    border-radius: 1.8rem;
+    font-size: 16px;
+    border-radius: 12px;
+    font-weight: 600;
+    padding: 16px 24px;
   }
   .btn-cta span{
     margin: 0 auto;
@@ -655,6 +667,8 @@ nav {
   width: 540px;
   height: 474px;
 }
+
+
 .card.left h2 {
   font-size: 40px;
    font-family: "Merriweather", serif;
@@ -712,10 +726,9 @@ nav {
   display: inline-block;
   padding: 16px 32px;
   border-radius: 10px;
-  font-weight: 600;
-  font-size: 13px;
+  font-weight: 400;
+  font-size: 16px;
   text-transform: uppercase;
-  letter-spacing: .03em;
   border: 0;
   cursor: pointer;
 }
@@ -723,20 +736,28 @@ nav {
 .btn.left {
   background: #233B67;
   color: white;
-  width: 262px;
+  width: 312px;
   height: 56px;
   font-size: 16px;
   font-family: "Manrope", sans-serif;
   
 }
+.btn.left:hover{
+  background-color: #1E3456;
+  color: #fff;
+}
 
 .btn.right {
   background: #DEA95A;
   color: #233B67;
-  width: 262px;
+  width: 312px;
   height: 56px;
   font-size: 16px;
   font-family: "Manrope", sans-serif;
+}
+.btn.right:hover{
+  background-color: #C0924E;
+  color:#F4F1E5;
 }
 
 .card-footer {
@@ -776,11 +797,11 @@ nav {
   .servicios-header {
     order: 1;
     text-align: center;
-    margin-bottom: 0;
+    margin-bottom: 6px;
   }
   .servicios-header h2 {
     font-size: 24px;
-    margin-bottom: 16px;
+    margin-bottom: 30px;
   }
 
   /* Carrusel (cards) */
@@ -801,11 +822,11 @@ nav {
   }
   .card-text {
     width: 100%;
-    height: auto;
+    height: 170px;
   }
   .servicio-img img {
     width: 100%;
-    height: auto;
+    height: 318px;
   }
   .card.left, .card.right {
   width: 100%;      /* ocupa todo el ancho del contenedor */
@@ -857,7 +878,9 @@ nav {
   max-width: 100%;
   word-break: break-word;     /* evita que palabras largas rompan el diseño */
   } 
-
+  .card.card.right{
+    padding: 24px 16px;
+  }
 /* Párrafo dentro de la card */
   .card p.lead {
   width: 100%;
@@ -876,6 +899,16 @@ nav {
 .card-footer {
   flex-direction: column;
   align-items: stretch;
+
+.btn.right{
+    width: 312px;
+    padding: 16px 24px;
+  }
+.btn.left{
+    width: 312px;
+    padding: 16px 24px;
+  }
+
 }
 
   }
@@ -1290,33 +1323,33 @@ section.valores .intro {
     text-align: center;
   }
 
+  /* ===== Ajuste para apilar cards verticalmente ===== */
   .valores-cards {
     display: flex;
-    justify-content: center; /* centra las cards */
-    align-items: flex-start;
+    flex-direction: column;  /* apila las cards verticalmente */
     flex-wrap: nowrap;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    gap: 16px;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;               /* espacio entre cards */
+    overflow: visible;       /* elimina scroll horizontal */
     padding: 0;
     position: relative;
     z-index: 1;
-  }
-
-  .valores-cards::-webkit-scrollbar {
-    display: none;
+    scroll-snap-type: none;  /* elimina snap */
   }
 
   .valor-card {
-    flex: 0 0 80%; /* cards centradas y anchas */
+    flex: none;              /* evita que se estiren */
+    width: 100%;             /* ocupan todo el ancho del contenedor */
     max-width: 355px;
     height: auto;
-    scroll-snap-align: center;
+    scroll-snap-align: none; /* elimina snap */
     background: transparent;
     padding: 20px 12px;
     text-align: center;
     box-sizing: border-box;
     border-radius: 12px;
+    text-align: left;
   }
 
   .valor-icon {
@@ -1339,30 +1372,15 @@ section.valores .intro {
     line-height: 1.4;
     color: #ffffff;
     padding: 0 12px;
+    text-align: left;
   }
 
-  /* Flechas visibles y centradas verticalmente */
+  /* Opcional: ocultar flechas en móvil cuando no hay carrusel */
   .carousel-btn {
-    display: flex;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    justify-content: center;
-    align-items: center;
-    background: white;
-    border: 2px solid #333;
-    border-radius: 50%;
-    width: 32px;
-    height: 32px;
-    font-size: 16px;
-    cursor: pointer;
-    z-index: 10;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    display: none;
   }
-
-  .carousel-btn.prev { left: 4px; }
-  .carousel-btn.next { right: 4px; }
 }
+
 
 
 /* === Testimonios === */
@@ -1790,22 +1808,20 @@ section.valores .intro {
 .btn-asesoria {
   background: #DEA95A;  
   margin-top: 60px;
-  padding: 20px 32px;
-  width: 267px;
+  padding: 16px 32px;
+  width: 312px;
   color: white;
   height: 56px;
-  border-radius: 16px;
+  border-radius: 12px;
   font-family: roboto;
   font-size: 16px;
   text-transform: uppercase;
-  cursor: pointer;
-  transition: all 0.18s ease;
 }
 
 /* hover */
 .btn-asesoria:hover {
-  background: #423E7D;
-  color: #DEA95A;
+  background: #C0924E;
+  color: #F4F1E5;
   
 }
 
@@ -1913,11 +1929,11 @@ section.valores .intro {
 
   .btn-asesoria {
     width: 100%;
-    max-width: 360px;
+    width: 312px;
     font-size: 16px;
     color: white; /* mantener visibilidad */
     padding: 16px 24px;
-    margin-top: 32px;
+    margin: 0 auto
   }
 }
 
@@ -1984,6 +2000,8 @@ section.valores .intro {
   
 }
 
+
+
 input, textarea {
   width: 100%;
   padding: 12px 15px;
@@ -1992,6 +2010,7 @@ input, textarea {
   border-radius: 6px;
   font-size: 1rem;
   outline: none;
+  height: 56px;
 }
 
 textarea {
@@ -2007,21 +2026,21 @@ textarea {
 
 .btn-form {
   width: 100%;
-  padding: 20px 32px;
+  padding: 16px 32px;
   background: #24406C;
   color: white;
   font-size: 16px;
   border: none;
   border-radius: 10px;
   cursor: pointer;
-  width: 271px;
+  width: 312px;
   height: 56px;
   transition: all 0.3s ease;
 }
 
 .btn-form:hover {
-  background: #423E7D;
-  color: #DEA95A;
+  background: #1E3456;
+  color: #fff;
 }
 
 .nota {
@@ -2113,6 +2132,44 @@ textarea {
   }
 }
 
+.btn-whatsapp {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 80px;
+  height: 80px;
+  background-color: #25D366; /* verde WhatsApp */
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+  transition: transform 0.3s ease;
+  z-index: 2000;
+}
+
+.btn-whatsapp:hover {
+  transform: scale(1.1);
+  background-color: #1ebe5d;
+}
+
+.icon-whatsapp {
+  width: 40px;
+  height: 40px;
+}
+
+@media (max-width: 480px) {
+  .btn-whatsapp {
+    bottom: 15px;
+    right: 15px;
+    width: 64px;
+    height: 64px;
+  }
+  .icon-whatsapp {
+    width: 32px;
+    height: 32px;
+  }
+}
 
 
 
@@ -2205,9 +2262,13 @@ textarea {
 .social-circle {
   width: 28px;
   height: 28px;
-  background: #b0b0b0;
+  background: white;
   border-radius: 50%;
   transition: background 0.3s;
+}
+.social-circle img{
+  width: 28px;
+  height: 28px;
 }
 
 .social-circle:hover {
@@ -2422,10 +2483,14 @@ textarea {
     width: 33px;
     height: 33px;
     border-radius: 50%;
-    background: #b0b0b0;
+    background: white;
     flex: 0 0 28px;
   }
   .social-circle:hover { background: #0066cc; }
+.social-circle img{
+  width: 33px;
+  height: 33px;
+}
 
   /* 6) Línea del footer: la dibujamos con ::before dentro de .footer-bottom,
          pero la colocamos antes del copy visualmente (usamos order para bloquear) */

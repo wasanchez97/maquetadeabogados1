@@ -20,7 +20,7 @@
   <nav class="container">
     <!-- Logo -->
     <div class="logo">
-      <img src="img/Logo.svg" alt="Logo Alarco">
+      <a href="#inicio"><img src="img/Logo.svg" alt="Logo Alarco"></a>
     </div>
 
     <!-- Botón hamburguesa -->
@@ -43,21 +43,23 @@
 </header>
 
   <!-- Secciones -->
- <section id="inicio" class="hero reveal">
-  <div class="hero-content">
+ <section id="inicio" class="hero">
+  <!-- Video de fondo -->
+  <video autoplay muted loop class="hero-video">
+    <source src="./videos/8second_cinematic_video_202509100020.mp4" type="video/mp4">
+  </video>
+  <div class="hero-content reveal">
     <h2 class="hero-title">Orden y confianza en cada paso inmobiliario</h2>
     <p class="hero-subtitle">Seguridad jurídica y confianza real en cada paso inmobiliario, con ética, transparencia y resultados.</p>
     <a href="#contacto" class="btn-cta"><span>AGENDA UNA CONSULTA</span></a>
   </div>
   <!-- Indicador scroll -->
-  <div class="scroll-indicator">
-    <span></span>
-  </div>
+  
 </section>
 
   <!-- SERVICIOS -->
-  <section class="servicios-section reveal" id="servicios">
-    <div class="servicios-grid">
+  <section class="servicios-section" id="servicios">
+    <div class="servicios-grid reveal">
       
       <!-- Columna Izquierda -->
       <div class="servicios-header">
@@ -69,7 +71,7 @@
       </div>
 
       <!-- Columna Derecha (Carrusel) -->
-      <div class="carousel-wrapper">
+      <div class="carousel-wrapper reveal">
         <div class="carousel-track">
           <!-- Card 1 -->
           <div class="card-servicio">
@@ -119,7 +121,7 @@
 
     
 
-  <section class="asesoria">
+  <section class="asesoria reveal">
     <div class="asesoria-row">
 
       <!-- CARD IZQUIERDA -->
@@ -133,6 +135,8 @@
             <div class="small">Escríbenos y llámanos. Siempre listos.</div>
           </div>
         </div>
+
+
 
         <div class="card-footer">
           <button class="btn left" type="button">Quiero una consulta</button>
@@ -157,8 +161,8 @@
 
 
 <!-- SOBRE NOSOTROS -->
-<section id="nosotros" class="section container reveal">
-  <div class="nosotros-content">
+<section id="nosotros" class="section container">
+  <div class="nosotros-content reveal">
     <div class="nosotros-img">
       <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216" alt="Equipo de abogados">
     </div>
@@ -179,8 +183,8 @@
 
 
 <!-- SOBRE Valores -->
-<section class="valores reveal" id="valores">
-  <div class="valor-container">
+<section class="valores" id="valores">
+  <div class="valor-container reveal">
  <div class="tittle-valores">
   <h2>¿Por qué elegir Estudio Alarco?</h2>
   </div>
@@ -190,7 +194,7 @@
   </div>
  
 
-  <div class="valores-carousel">
+  <div class="valores-carousel reveal">
     <button class="carousel-btn prev"><i class="fa-solid fa-arrow-left"></i></button>
     <div class="valores-cards">
       <div class="valor-card">
@@ -269,18 +273,18 @@
     </div>
   </div>
 
-  <div class="boton-centro">
+  <div class="boton-centro reveal">
     <button type="button" class="btn-asesoria">SOLICITA UNA ASESORÍA</button>
   </div>
 </section>
 
 <!-- Testimonios -->
-<section id="testimonios" class="testimonios-section reveal">
-  <div class="testimonios-header">
+<section id="testimonios" class="testimonios-section">
+  <div class="testimonios-header reveal">
     <h2 class="clientes-title">Testimonios</h2>
   </div>
 
-  <div class="testimonial-carousel">
+  <div class="testimonial-carousel reveal">
     <div class="testimonial-slide active">
       <p class="testimonial-author">Carlos Gutiérrez</p>
       <blockquote class="testimonial-text">
@@ -315,8 +319,8 @@
 </section>
 
 <!-- CONTACTO -->
-<section id="contacto" class="section reveal">
-  <div class="contacto-content">
+<section id="contacto" class="section">
+  <div class="contacto-content reveal">
     <!-- Texto a la izquierda -->
     <div class="contacto-texto">
       <h2>Tu asesoría legal empieza aquí,</h2>
@@ -352,12 +356,24 @@
       </div>
 
       <div class="form-actions">
-        <button type="submit" class="btn-form">SOLICITA UNA ASESORÍA</button>
+        <button type="submit" class="btn-form">ENVIAR</button>
         <p class="nota">Usted recibirá una respuesta de nosotros dentro de 1 a 2 días hábiles.</p>
       </div>
     </form>
   </div>
 </section>
+
+
+<!-- En tu HTML, al final del body -->
+<a href="https://wa.me/51999999999?text=Hola%20quiero%20más%20información"
+   class="btn-whatsapp" target="_blank" rel="noopener" aria-label="WhatsApp">
+  <div class="whatsapp-bg">
+    <!-- SVG logo blanco dentro de círculo verde -->
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon-whatsapp">
+      <path fill="white" d="M414.73,97.1A222.14,222.14,0,0,0,256.94,32C134,32,33.92,131.58,33.87,254A220.61,220.61,0,0,0,63.65,365L32,480l118.25-30.87a223.63,223.63,0,0,0,106.6,27h.09c122.93,0,223-99.59,223.06-222A220.18,220.18,0,0,0,414.73,97.1ZM256.94,438.66h-.08a185.75,185.75,0,0,1-94.36-25.72l-6.77-4L85.56,427.26l18.73-68.09-4.41-7A183.46,183.46,0,0,1,71.53,254c0-101.73,83.21-184.5,185.48-184.5A185,185.0,0,0,1,442.34,254.14C442.3,355.88,359.13,438.66,256.94,438.66ZM358.63,300.47c-5.57-2.78-33-16.2-38.08-18.05s-8.83-2.78-12.54,2.78-14.4,18-17.65,21.75-6.5,4.16-12.07,1.38-23.54-8.63-44.83-27.53c-16.57-14.71-27.75-32.87-31-38.42s-.35-8.56,2.44-11.32c2.51-2.49,5.57-6.48,8.36-9.72s3.72-5.56,5.57-9.26.93-6.94-.46-9.71-12.54-30.08-17.18-41.19c-4.53-10.82-9.12-9.35-12.54-9.52-3.25-.16-7-.2-10.69-.2a20.53,20.53,0,0,0-14.86,6.94c-5.11,5.56-19.51,19-19.51,46.28s20,53.68,22.76,57.38,39.3,59.73,95.21,83.76a323.11,323.11,0,0,0,31.78,11.68c13.35,4.22,25.5,3.63,35.1,2.2,10.71-1.59,33-13.42,37.63-26.38s4.64-24.06,3.25-26.37S364.21,303.24,358.63,300.47Z"/>
+    </svg>
+  </div>
+</a>
 
 <footer class="footer" id="footer">
   <div class="footer-grid">
@@ -365,7 +381,7 @@
     <!-- Columna 1: Logo + Links -->
     <div class="footer-col footer-col1">
       <div class="footer-logo">
-        <img src="img/Logo.svg" alt="Logo Alarco">
+        <img src="img/Logo-blanc.svg" alt="Logo Alarco">
       </div>
       <div class="footer-links-grid">
         <ul>
@@ -398,8 +414,8 @@
       <p class="footer-subtext">Especialistas en derecho inmobiliario y corporativo con visión financiera.</p>
       <div class="footer-social">
         <span>Síguenos:</span>
-        <a href="#"><div class="social-circle"></div></a>
-        <a href="#"><div class="social-circle"></div></a>
+        <a href="#"><div class="social-circle"><img src="img/facebook.svg" alt=""></div></a>
+        <a href="#"><div class="social-circle"><img src="img/instagram.svg" alt=""></div></a>
       </div>
     </div>
   </div>
