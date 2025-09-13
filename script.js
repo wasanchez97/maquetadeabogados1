@@ -191,5 +191,81 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
+//valores
+document.addEventListener("DOMContentLoaded", () => {
+  const track = document.querySelector(".valores-cards");
+  const cards = Array.from(track.querySelectorAll(".valor-card"));
+  const prevBtn = document.querySelector(".carousel-btn.prev");
+  const nextBtn = document.querySelector(".carousel-btn.next");
 
+  let index = 0; // siempre inicia en el primer card
+
+  const isMobile = () => window.innerWidth <= 650;
+
+  function scrollToIndex(i, smooth = true) {
+    if (!cards[i]) return;
+    const card = cards[i];
+    // centramos el card en pantalla
+    const target = card.offsetLeft - (track.clientWidth - card.offsetWidth) / 2;
+    track.scrollTo({ left: target, behavior: smooth ? "smooth" : "auto" });
+    index = i;
+    updateButtons();
+  }
+
+  function updateButtons() {
+    if (!isMobile()) {
+      prevBtn.style.display = "none";
+      nextBtn.style.display = "none";
+      return;
+    }
+    prevBtn.style.display = "block";
+    nextBtn.style.display = "block";
+    prevBtn.disabled = index <= 0;
+    nextBtn.disabled = index >= cards.length - 1;
+    prevBtn.style.opacity = prevBtn.disabled ? 0.4 : 1;
+    nextBtn.style.opacity = nextBtn.disabled ? 0.4 : 1;
+  }
+
+  // Flechas
+  nextBtn.addEventListener("click", () => {
+    if (index < cards.length - 1) scrollToIndex(index + 1);
+  });
+  prevBtn.addEventListener("click", () => {
+    if (index > 0) scrollToIndex(index - 1);
+  });
+
+  // Swipe/manual scroll → actualiza index
+  track.addEventListener("scroll", () => {
+    if (!isMobile()) return;
+    const trackCenter = track.scrollLeft + track.clientWidth / 2;
+    let nearest = 0, minDist = Infinity;
+    cards.forEach((card, i) => {
+      const cardCenter = card.offsetLeft + card.offsetWidth / 2;
+      const dist = Math.abs(cardCenter - trackCenter);
+      if (dist < minDist) {
+        minDist = dist;
+        nearest = i;
+      }
+    });
+    index = nearest;
+    updateButtons();
+  });
+
+  // Resize
+  window.addEventListener("resize", () => {
+    if (isMobile()) {
+      scrollToIndex(index, false);
+    } else {
+      track.scrollTo({ left: 0, behavior: "auto" });
+      index = 0;
+    }
+    updateButtons();
+  });
+
+  // Inicializar
+  setTimeout(() => {
+    scrollToIndex(0, false); // siempre arranca en la PRIMER card
+    updateButtons();
+  }, 100);
+});
 
