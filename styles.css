@@ -261,6 +261,10 @@ nav {
   transform: rotate(-45deg) translateY(-8px);
 }
 
+.extra-contacto {
+  display: none;
+}
+
 /* --- MEDIA QUERIES --- */
 @media (max-width: 1024px) {
   nav {
@@ -294,20 +298,23 @@ nav {
   }
 
   /* Ocultar nav-links */
-  .nav-links {
-    position: fixed;       /* para overlay */
-    left: 0;
-    top: 70px;
-    width: 100vw;
-    height: 480px;
-    background: #EFEDE7;
-    flex-direction: column;
-    align-items: center;
-    display: none;         /* oculto inicialmente */
-    overflow-y: auto;
-    z-index: 1000;
-    margin: 0;             /* eliminar márgenes laterales */
-  }
+  .nav-links {  
+  position: fixed;
+  top: 70px;              /* altura de tu navbar */
+  left: 0;
+  width: 100vw;
+  height: calc(100vh - 70px); /* ocupa todo el alto restante */
+  background: #EFEDE7;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding-top: 2rem;
+  gap: 2rem;
+  display: none;
+  overflow-y: auto;
+  z-index: 1000;
+  margin: 0;
+}
 
   .nav-links.active {
     display: flex;
@@ -316,23 +323,65 @@ nav {
 
   .nav-links li {
     width: 100%;
-    margin-top: 10px;
-    text-align: center;
+   text-align: center;
+   height: 50px;
   }
 
   /* Botones/links ocupan todo ancho */
   .nav-links li a,
   .nav-links li a{
-    width: 100%;
+    width: 90%;
     text-align: left;
     margin-left: 20px;
     display: inline-block;
-    font-size: 20px;
+    font-size: 44px;
+    font-family: "Sentient";
+    font-weight: 300;
+  
+
+
+  }
+  
+
+  .link::before{
+      content: "";
+  display: block;
+  width: 90%;        /* ancho máximo del borde */
+  border-top: 1px solid black;
+  margin: 0 auto;      /* centra la línea */
+  }
+
+  .btn-link{
+    padding: 20px;
   }
   .btn-contacto{
     width:159px;
     margin: 0 auto;
   }
+   .nav-links.active .extra-contacto {
+    display: block;         /* se activa solo cuando el menú hamburguesa está desplegado */
+    width: 100%;
+    text-align: center;
+    margin-top: 30px;
+    padding-bottom: 20px;
+    font-family: "Sentient";
+  }
+
+  .extra-contacto p {
+    margin: 5px 0;
+  }
+
+  .extra-contacto a {
+    font-size: 24px;
+    color: #24406C;
+    text-decoration: none;
+  }
+
+  .extra-contacto a:hover {
+    text-decoration: underline;
+  }
+
+  
 }
 
 
