@@ -398,6 +398,7 @@ nav {
   justify-content: left;
   text-align: left;
   overflow: hidden;
+  background-color: transparent;
 }
 .hero-video {
   position: absolute;
@@ -527,6 +528,8 @@ nav {
   .hero-video {
     display: none;
   }
+
+
   .video.mobile {
     display: block;
     position: absolute;
@@ -544,6 +547,7 @@ nav {
     max-width: 380px;
     line-height: 1.2;
   }
+
   .hero-subtitle {
     font-size: 24px;
     max-width: 380px;
@@ -565,6 +569,7 @@ nav {
     padding: 16px 24px;
     margin: 0 auto;
   }
+  .hero::before { display: none; }
   .btn-cta span {
     margin: 0 auto;
     width: 203px;
