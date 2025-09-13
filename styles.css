@@ -574,6 +574,7 @@ nav {
   position: absolute;
   inset: 0;
   background-color: #70542ed8; /* un color semitransparente */
+  mix-blend-mode: hard-light;
 }
   .btn-cta span {
     margin: 0 auto;
