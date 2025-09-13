@@ -569,7 +569,12 @@ nav {
     padding: 16px 24px;
     margin: 0 auto;
   }
-  .hero::before { display: none; }
+  .hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgba(112, 85, 46, 0.5); /* un color semitransparente */
+}
   .btn-cta span {
     margin: 0 auto;
     width: 203px;
