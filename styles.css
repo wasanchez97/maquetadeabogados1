@@ -762,7 +762,7 @@ nav {
 @media (max-width: 480px) {
   /* === Servicios === */
   .servicios-section {
-    padding: 40px 20px;
+    padding: 70px 16px;
     min-width: auto;
   }
 
@@ -807,6 +807,10 @@ nav {
     width: 100%;
     height: auto;
   }
+  .card.left, .card.right {
+  width: 100%;      /* ocupa todo el ancho del contenedor */
+      /* se adapta al contenido */
+}
 
   /* Flechas → debajo de las cards */
   .carousel-controls {
@@ -819,35 +823,62 @@ nav {
     width: 100%;               /* ocupa todo el ancho */
   }
 
-  /* === Asesorías === */
+/* Contenedor principal */
   .asesoria {
-    padding: 40px 20px;
+  padding: 40px 16px;       /* margen lateral fijo */
+  box-sizing: border-box;    /* incluye padding en ancho total */
   }
+
+/* Grid para las cards */
   .asesoria-row {
-    grid-template-columns: 1fr;
-    gap: 24px;
+  display: grid;
+  grid-template-columns: 1fr; /* una columna adaptable */
+  gap: 24px;                  /* espacio entre cards */
+  width: 100%;  
   }
-  .card {
-    width: 100%;
+
+/* Card individual */
+  .card {           
+    max-width: calc(100%-32px);    /* ocupa todo el ancho del contenedor */
+    min-width: calc(100%-32px);
     height: auto;
-    padding: 24px;
+  padding: 24px 16px;        /* padding interno coherente con margen lateral */
+  box-sizing: border-box;     /* evita overflow por padding */
+  border-radius: 16px;
+  background: #fff;
+  overflow: hidden;           /* corta cualquier contenido que se salga */
   }
+  
+
+/* Título dentro de la card */
   .card h2 {
-    font-size: 24px;
-    width: 100%;
-  }
+  margin: 0 0 16px 0;
+  font-size: 20px;
+  max-width: 100%;
+  word-break: break-word;     /* evita que palabras largas rompan el diseño */
+  } 
+
+/* Párrafo dentro de la card */
   .card p.lead {
-    width: 100%;
-    font-size: 16px;
+  width: 100%;
+  font-size: 16px;
+  max-width: 100%;
+  word-break: break-word;     /* evita overflow por texto largo */
   }
+
+/* Botones */
   .btn {
-    width: 100%;
+  width: 100%;
+  margin: 0 auto;
   }
-  .card-footer {
-    flex-direction: column;
-    align-items: stretch;
-  }
+
+/* Footer de la card */
+.card-footer {
+  flex-direction: column;
+  align-items: stretch;
 }
+
+  }
 
 
 
@@ -953,14 +984,16 @@ nav {
     width: 100%;
     max-height: unset;
   }
+  
 
   .nosotros-img img {
-    width: 374px;
-    height: 458px;
-
-    border-radius: 0px 12px 12px 0px; /* bordes más suaves en móvil */
-    box-shadow: 0 6px 16px rgba(0,0,0,0.1);
-    margin: 0;
+    max-width: 100%;
+    max-height: 338px;
+    padding-left: 16px;
+    padding-right: 16px;
+    border-radius: 48px;
+    background-color: #EFEDE7;
+    box-shadow: none;
   }
 
   .nosotros-texto {
@@ -1214,7 +1247,7 @@ section.valores .intro {
   #valores {
     width: 100%;
     height: auto;
-    padding: 88px 16px 48px 16px;
+    padding: 88px 16px 88px 16px;
     position: relative;
     background: url('./img/Nosotros.jpg') center/cover no-repeat;
     overflow: hidden;
@@ -1244,13 +1277,17 @@ section.valores .intro {
     margin-bottom: 12px;
     line-height: 1.2;
     color: #EAF6ED;
+    text-align: center;
   }
 
   section.valores .intro {
     font-size: 16px;
     line-height: 1.5;
+    max-width: 100%;
+    margin-top: 40px;
     margin-bottom: 40px;
     color: #EFEDE7;
+    text-align: center;
   }
 
   .valores-cards {
@@ -1519,10 +1556,11 @@ section.valores .intro {
 /* === Responsive 480px === */
 @media (max-width: 480px) {
   #testimonios {
-    padding-top: 72px;
-    padding-bottom: 72px;
+    padding-top: 88px;
+    padding-bottom: 88px;
     padding-left: 16px;
     padding-right: 16px;
+    max-width: 100%;
   }
 
   .testimonios-section {
@@ -1555,11 +1593,12 @@ section.valores .intro {
     box-shadow: 0 3px 12px rgba(0,0,0,0.08);
     background: #fff;
     height: auto;
-    height: 385px;
+    min-height: 385px;
     position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    max-width: 100%;
   }
 
   .testimonial-slide {
@@ -1819,10 +1858,10 @@ section.valores .intro {
     gap: 24px;
     align-items: flex-start;
     text-align: left;
-    padding: 15px 12px;
+    padding: 18px 24px;
     height: auto; /* ajusta altura automáticamente */
     background-color: white;
-   min-height: 500px;
+   min-height: 550px;
   }
 
   /* Texto pasos */
