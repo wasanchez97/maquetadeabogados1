@@ -744,7 +744,7 @@ nav {
 
 
 .card.left h2 {
-  font-size: 40px;
+  font-size: 32px;
    font-family: "Merriweather", serif;
   line-height: 1;
   margin: 0;
@@ -870,7 +870,7 @@ nav {
   /* Título */
   .servicios-header {
     order: 1;
-    text-align: center;
+    text-align: left;
     margin-bottom: 6px;
   }
   .servicios-header h2 {
@@ -911,7 +911,7 @@ nav {
   .carousel-controls {
     order: 3;                  /* las manda debajo */
     display: flex;             /* aseguras flex */
-    justify-content: center;   /* centrado horizontal */
+    justify-content: left;   /* centrado horizontal */
     align-items: center;
     margin: 20px auto 0;
     gap: 24px;
