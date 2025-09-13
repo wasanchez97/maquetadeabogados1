@@ -573,7 +573,7 @@ nav {
   content: "";
   position: absolute;
   inset: 0;
-  background-color: rgba(112, 85, 46, 0.5); /* un color semitransparente */
+  background-color: #70542ed8; /* un color semitransparente */
 }
   .btn-cta span {
     margin: 0 auto;
