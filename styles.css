@@ -1029,9 +1029,15 @@ nav {
     width: 288px;
     padding: 16px 24px;
   }
-.phone{
+.card.left .phone{
   text-decoration: none;
+  color: inherit;
 }
+.card.left .phone:active{
+  text-decoration: none;
+  color: inherit;
+}
+
 }
 
   }
