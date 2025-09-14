@@ -1029,7 +1029,9 @@ nav {
     width: 288px;
     padding: 16px 24px;
   }
-
+.phone{
+  text-decoration: none;
+}
 }
 
   }
