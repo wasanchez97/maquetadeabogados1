@@ -935,16 +935,6 @@ nav {
     text-decoration: none !important;
    }
 
-     .card.left .phone,
-  .card.left .phone:link,
-  .card.left .phone:visited,
-  .card.left .phone:hover,
-  .card.left .phone:active {
-    font-family: "Merriweather", serif;
-    font-weight: 700;
-    color: #000 !important;         /* color fijo */
-    text-decoration: none !important; /* quita el subrayado */
-  }
    
 .card.right{
   padding: 24px 32px;
@@ -2729,7 +2719,7 @@ select {
     width: 33px;
     height: 33px;
     border-radius: 50%;
-    background: white;
+    background: transparent;
     flex: 0 0 28px;
   }
   .social-circle:hover { background: #0066cc; }
