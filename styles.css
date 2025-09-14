@@ -2043,7 +2043,8 @@ section.valores .intro {
     font-size: 16px;
     color: white; /* mantener visibilidad */
     padding: 16px 24px;
-    margin: 0 auto
+    margin: 0 auto;
+    border: none;
   }
 }
 
