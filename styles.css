@@ -726,7 +726,7 @@ nav {
 }
 
 .card {
-  border-radius: 18px;
+  border-radius: 32px;
   padding: 24px 32px;
   min-height: 360px;
   display: flex;
@@ -740,6 +740,7 @@ nav {
   color: #233B67;
   width: 540px;
   height: 474px;
+  
 }
 
 
@@ -903,16 +904,25 @@ nav {
     height: 318px;
   }
   .card.left, .card.right {
-  width: 100%;      /* ocupa todo el ancho del contenedor */
+  width: 100%;
+  padding: 24px 32px;      /* ocupa todo el ancho del contenedor */
       /* se adapta al contenido */
 }
   .card.left h2{
-    font-size: 36px;
+    font-size: 32px;
+    font-weight: 400;
+    line-height: 1.3;
   }
    .card.left p.lead{
     font-size: 16px;
+    font-family: "Merriweather", serif;
+
    }
    
+   .card.left .phone{
+    font-family: "Merriweather", serif;
+    font-weight: 700;
+   }
   /* Flechas → debajo de las cards */
   .carousel-controls {
     order: 3;                  /* las manda debajo */
@@ -974,6 +984,7 @@ nav {
   width: 100%;
   margin: 0 auto;
   }
+  
 
 /* Footer de la card */
 .card-footer {
@@ -985,7 +996,7 @@ nav {
     padding: 16px 24px;
   }
 .btn.left{
-    width: 312px;
+    width: 288px;
     padding: 16px 24px;
   }
 
