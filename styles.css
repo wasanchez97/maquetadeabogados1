@@ -1055,8 +1055,7 @@ nav {
   max-width: 566px;
  height: 458px;
   border-radius: 32px;
-  object-fit: cover;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+
 }
 
 .nosotros-texto {
@@ -1130,17 +1129,20 @@ nav {
     max-height: unset;
   }
   
-
   .nosotros-img img {
-    max-width: 100%;
+    width: 100%;
     max-height: 338px;
     padding-left: 16px;
     padding-right: 16px;
-    border-radius: 48px;
     background-color: #EFEDE7;
     box-shadow: none;
+   
   }
-
+  .nosotros-img{
+    overflow: hidden;
+    width: 100%;
+    border-radius: 32px;
+  }
   .nosotros-texto {
     margin-top: 0;
     max-width: 100%;
