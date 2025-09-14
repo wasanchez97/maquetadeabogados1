@@ -1239,9 +1239,9 @@ section.valores .intro {
   display: flex;
   gap: 95px;
   padding-top:120px ;
-  justify-content: center;
+  justify-content: space-around;
   align-items: flex-start;
-
+  flex-wrap: nowrap;
   transition: transform 0.35s ease;
 }
 .valor-card {
