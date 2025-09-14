@@ -2741,17 +2741,16 @@ select {
     text-align: left;
     gap: 6px;
     font-size: 14px;
-    height: 151px;
+    height: 200px;
     width: 100%;
   }
-
+  
   .footer-bottom::before {
     content: "";
     position: absolute;
-    left: 12px;
-    right: 12px;
     top: 0;
     border-top: 1px solid #a0a0a0;
+    width: 100%;
   }
 
   /* 7) Copy + links (políticas, términos, desarrollado) debajo de la línea */
@@ -2764,13 +2763,21 @@ select {
 
   .footer-bottom-links {
     order: 9;
-    padding: 6px 12px 12px;
+    padding: 6px 0;
     display: flex;
     gap: 12px;
-    flex-wrap: wrap;
     justify-content: flex-start;
     width: 100%;
   }
+   .footer-bottom-links1 {
+    order: 9;
+    padding: 6px 0;
+    display: flex;
+    gap: 12px;
+    justify-content: flex-start;
+    width: 100%;
+  }
+    
   .footer-bottom-links a {
     text-decoration: none;
     font-size: 0.82rem;
