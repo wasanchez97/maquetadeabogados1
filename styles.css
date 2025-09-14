@@ -2770,7 +2770,7 @@ select {
   }
    .footer-bottom-links1 {
     order: 9;
-    padding: 6px 0;
+    padding: 7px 0;
     display: flex;
     gap: 12px;
     justify-content: flex-start;
