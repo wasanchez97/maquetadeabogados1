@@ -2035,12 +2035,11 @@ section.valores .intro {
     display: flex;
     justify-content: center;
     margin-top: 32px;
-    padding: 0 16px;
+    padding: 0px
   }
 
   .btn-asesoria {
     width: 100%;
-    width: 312px;
     font-size: 16px;
     color: #24406C; /* mantener visibilidad */
     padding: 16px 24px;
