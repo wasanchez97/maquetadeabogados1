@@ -1168,6 +1168,8 @@ nav {
     height: auto;
     text-align: left;
   }
+
+
 }
 
 
@@ -1417,7 +1419,7 @@ section.valores .intro {
     margin-bottom: 12px;
     line-height: 1.2;
     color: #EAF6ED;
-    text-align: center;
+    text-align: left;
   }
 
   section.valores .intro {
@@ -1427,7 +1429,7 @@ section.valores .intro {
     margin-top: 40px;
     margin-bottom: 40px;
     color: #EFEDE7;
-    text-align: center;
+    text-align: left;
   }
 
   /* ===== Ajuste para apilar cards verticalmente ===== */
@@ -1478,7 +1480,7 @@ section.valores .intro {
     font-size: 0.95rem;
     line-height: 1.4;
     color: #ffffff;
-    padding: 0 12px;
+    padding: 0;
     text-align: left;
   }
 
