@@ -940,6 +940,11 @@ nav {
 
    }
 
+  .btn.right{
+   max-width: 288px; 
+   margin: 0 auto;
+  }
+
 
   /* Flechas → debajo de las cards */
   .carousel-controls {
