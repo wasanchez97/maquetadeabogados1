@@ -934,6 +934,18 @@ nav {
     font-weight: 700;
     text-decoration: none !important;
    }
+
+     .card.left .phone,
+  .card.left .phone:link,
+  .card.left .phone:visited,
+  .card.left .phone:hover,
+  .card.left .phone:active {
+    font-family: "Merriweather", serif;
+    font-weight: 700;
+    color: #000 !important;         /* color fijo */
+    text-decoration: none !important; /* quita el subrayado */
+  }
+   
 .card.right{
   padding: 24px 32px;
 }
