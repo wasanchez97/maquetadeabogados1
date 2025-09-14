@@ -2342,7 +2342,7 @@ select {
 
 .btn-whatsapp {
   position: fixed;
-  bottom: 80px;
+  bottom: 126px;
   right: 20px;
   width: 80px;
   height: 80px;
@@ -2514,12 +2514,19 @@ select {
 .footer-bottom-links1{
   padding: 32px 0px;
   display: flex;
-  gap: 1.5rem;
+  gap: 16px;
+  width: 175px;
+  height: 35px;
   margin-bottom: 0;
+}
+.logo-footer{
+  width:48px;
+  height: 35px;
 }
 
 .footer-bottom-links1 a:hover {
   color: #0066cc;
+  
 }
 
 
