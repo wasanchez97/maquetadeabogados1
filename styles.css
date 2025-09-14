@@ -2754,6 +2754,7 @@ select {
   .cta-final,
   .footer-grid,
   .testimonios-section,
+
   .seccion-pasos,
   #valores,
   #contacto {
@@ -2792,7 +2793,9 @@ select {
     margin-bottom: 20px ;
     
   }
-  
+  .asesoria{
+    margin: 0 auto;
+  }  
 
 
 
