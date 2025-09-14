@@ -270,19 +270,13 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 //Modal de servicios 
-  const servicioInput = document.getElementById("servicio");
+   const servicioInput = document.getElementById("servicio");
   const modal = document.getElementById("servicio-modal");
-  const cerrarModalBtn = document.querySelector(".cerrar-modal");
   const opciones = document.querySelectorAll(".servicios-lista li");
 
   // Abrir modal al hacer clic en el input
   servicioInput.addEventListener("click", () => {
     modal.style.display = "flex";
-  });
-
-  // Cerrar modal con botón
-  cerrarModalBtn.addEventListener("click", () => {
-    modal.style.display = "none";
   });
 
   // Seleccionar servicio
