@@ -2504,7 +2504,7 @@ select {
  padding: 32px 0;
 }
 .footer-bottom-links {
-  padding: 32px 72px;
+  padding: 32px 0px;
   display: flex;
   gap: 1.5rem;
   flex-wrap: wrap;
