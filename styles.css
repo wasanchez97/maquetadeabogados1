@@ -932,6 +932,7 @@ nav {
    .card.left .phone{
     font-family: "Merriweather", serif;
     font-weight: 700;
+    text-decoration: none !important;
    }
 .card.right{
   padding: 24px 32px;
@@ -1029,14 +1030,8 @@ nav {
     width: 288px;
     padding: 16px 24px;
   }
-.card.left .phone{
-  text-decoration: none;
-  color: inherit;
-}
-.card.left .phone:active{
-  text-decoration: none;
-  color: inherit;
-}
+
+
 
 }
 
