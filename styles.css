@@ -2756,7 +2756,6 @@ select {
   /* 7) Copy + links (políticas, términos, desarrollado) debajo de la línea */
   .footer-bottom p {
     order: 8; /* el texto dentro del footer-bottom ya aparece tras la línea */
-    padding: 8px 12px 0;
     margin: 0;
     font-size: 0.75rem;
   }
