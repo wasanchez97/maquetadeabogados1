@@ -1135,14 +1135,9 @@ nav {
     padding-left: 16px;
     padding-right: 16px;
     background-color: #EFEDE7;
-    box-shadow: none;
    
   }
-  .nosotros-img{
-    overflow: hidden;
-    width: 100%;
-    border-radius: 32px;
-  }
+  
   .nosotros-texto {
     margin-top: 0;
     max-width: 100%;
