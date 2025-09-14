@@ -270,10 +270,15 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 //Modal de servicios 
-  const servicioInput = document.getElementById("servicio");
+const servicioInput = document.getElementById("servicio");
   const modal = document.getElementById("servicio-modal");
   const modalContent = document.querySelector(".modal-content");
   const opciones = document.querySelectorAll(".servicios-lista li");
+
+  // función reutilizable para cerrar modal
+  function cerrarModal() {
+    modal.style.display = "none";
+  }
 
   // Abrir modal al hacer clic en el input
   servicioInput.addEventListener("click", () => {
@@ -284,13 +289,20 @@ document.addEventListener("DOMContentLoaded", () => {
   opciones.forEach(opcion => {
     opcion.addEventListener("click", () => {
       servicioInput.value = opcion.textContent;
-      modal.style.display = "none";
+      cerrarModal();
+    });
+    opcion.addEventListener("touchstart", () => { // soporte iOS
+      servicioInput.value = opcion.textContent;
+      cerrarModal();
     });
   });
 
-  // Cerrar modal al hacer clic fuera de la ventana emergente
-  window.addEventListener("click", e => {
+  // Cerrar modal al hacer clic/touch fuera de la ventana emergente
+  function detectarCierre(e) {
     if (modal.style.display === "flex" && !modalContent.contains(e.target) && e.target !== servicioInput) {
-      modal.style.display = "none";
+      cerrarModal();
     }
-  });
+  }
+
+  window.addEventListener("click", detectarCierre);
+  window.addEventListener("touchstart", detectarCierre); // soporte iOS
