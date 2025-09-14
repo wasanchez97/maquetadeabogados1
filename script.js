@@ -270,8 +270,9 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 //Modal de servicios 
-   const servicioInput = document.getElementById("servicio");
+  const servicioInput = document.getElementById("servicio");
   const modal = document.getElementById("servicio-modal");
+  const modalContent = document.querySelector(".modal-content");
   const opciones = document.querySelectorAll(".servicios-lista li");
 
   // Abrir modal al hacer clic en el input
@@ -279,7 +280,7 @@ document.addEventListener("DOMContentLoaded", () => {
     modal.style.display = "flex";
   });
 
-  // Seleccionar servicio
+  // Seleccionar servicio y cerrar modal
   opciones.forEach(opcion => {
     opcion.addEventListener("click", () => {
       servicioInput.value = opcion.textContent;
@@ -287,9 +288,9 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // Cerrar si clic fuera del modal
+  // Cerrar modal al hacer clic fuera de la ventana emergente
   window.addEventListener("click", e => {
-    if (e.target === modal) {
+    if (modal.style.display === "flex" && !modalContent.contains(e.target) && e.target !== servicioInput) {
       modal.style.display = "none";
     }
   });
