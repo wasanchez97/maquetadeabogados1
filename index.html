@@ -356,9 +356,24 @@
       <div class="form-group">
         <input type="email" id="email" placeholder="Email" required />
       </div>
-      <div class="form-group">
-        <input type="text" id="servicio" placeholder="Tipo de Servicio" />
-      </div>
+  <div class="form-group">
+  <input type="text" id="servicio" placeholder="Tipo de Servicio" readonly required />
+</div>
+
+<!-- Modal de servicios -->
+<div id="servicio-modal" class="modal">
+  <div class="modal-content">
+    <h3>Seleccione un servicio</h3>
+    <ul class="servicios-lista">
+      <li data-value="asesoria-legal">Asesoría Legal</li>
+      <li data-value="constitucion-empresas">Constitución de Empresas</li>
+      <li data-value="contratos">Redacción de Contratos</li>
+      <li data-value="propiedad-inmobiliaria">Propiedad Inmobiliaria</li>
+      <li data-value="litigios">Defensa en Litigios</li>
+    </ul>
+    <button class="cerrar-modal">Cancelar</button>
+  </div>
+</div>
 
       <div class="form-group full">
         <textarea id="mensaje" rows="5" placeholder="Describe tu caso"></textarea>

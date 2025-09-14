@@ -269,3 +269,33 @@ document.addEventListener("DOMContentLoaded", () => {
   }, 100);
 });
 
+//Modal de servicios 
+  const servicioInput = document.getElementById("servicio");
+  const modal = document.getElementById("servicio-modal");
+  const cerrarModalBtn = document.querySelector(".cerrar-modal");
+  const opciones = document.querySelectorAll(".servicios-lista li");
+
+  // Abrir modal al hacer clic en el input
+  servicioInput.addEventListener("click", () => {
+    modal.style.display = "flex";
+  });
+
+  // Cerrar modal con botón
+  cerrarModalBtn.addEventListener("click", () => {
+    modal.style.display = "none";
+  });
+
+  // Seleccionar servicio
+  opciones.forEach(opcion => {
+    opcion.addEventListener("click", () => {
+      servicioInput.value = opcion.textContent;
+      modal.style.display = "none";
+    });
+  });
+
+  // Cerrar si clic fuera del modal
+  window.addEventListener("click", e => {
+    if (e.target === modal) {
+      modal.style.display = "none";
+    }
+  });
