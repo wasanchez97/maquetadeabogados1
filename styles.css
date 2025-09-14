@@ -2488,7 +2488,7 @@ select {
   padding-top: 1rem;
   display: flex;
   justify-content: space-between;
-  font-size: 0.85rem;
+  font-size: 13px;
   color: #8FA4C9;
   height: 80px;
   gap: 1rem;
@@ -2511,7 +2511,23 @@ select {
   margin-bottom: 0;
 }
 
+.footer-bottom-links1{
+  padding: 32px 0px;
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 0;
+}
+
+.footer-bottom-links1 a:hover {
+  color: #0066cc;
+}
+
+
 .footer-bottom-links a {
+  color: #8FA4C9;
+  text-decoration: none;
+}
+.footer-bottom-links1 a {
   color: #8FA4C9;
   text-decoration: none;
 }
